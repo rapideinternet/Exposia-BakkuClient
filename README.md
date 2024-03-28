@@ -28,11 +28,44 @@ BAKKU_API_KEY={{YOUR_API_KEY}}
 
 #### 2. Create or edit the pages in /resources/views/pages/
 
-#### 3. Create or edit the components in /resources/views/components/, if you need an extra component use
+#### 3. To include images use the following code
+```html
+<x-media :id="$block['fields']['image']" />
+```
+
+#### 4. To include a collection use the following code
+```html
+<x-collections :type="'{{COLLECTION_TYPE}}'" :limit="{{LIMIT}}" />
+```
+
+#### 5. To change the collections open the /app/View/Components/Collections.php file and change the collections
+
+#### 6.To include the menu use the following code
+```html
+<x-menu slug="{{ $slug }}" />
+```
+
+#### 7. Create or edit the components in /resources/views/components/, if you need an extra component use
 ```bash
 php artisan make:component {{ComponentName}}
 ```
 
+#### 8. To create blocks use the following command
+````bash
+php artisan make:view blocks/{{BlockName}}
+````
+
+#### 9. To include a block use the following code
+```php
+@foreach($blocks as $block)
+    @include('blocks.'.$block['label'], ['block' => $block])
+@endforeach
+```
+
+#### 10. To create a page use the following command
+```bash
+php artisan make:view pages/{{PageName}}
+```
 <hr>
 
 ## Installation
