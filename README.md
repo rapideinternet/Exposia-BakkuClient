@@ -1,5 +1,4 @@
 <p align="center" style="display: flex; gap: 50px; margin: 50px auto 50px auto; justify-content: center;">
-<a href="https://exposia.nl" target="_blank"><img src="https://rapide.nl/storage/app/media/logos/exposia-logo.svg" width="250" alt="Exposia Logo"></a>
 <a href="https://admin.bakku.cloud" target="_blank"><img src="https://admin.bakku.cloud/img/logo-bakku-8285dc3fbbae923c5dd447120ec7e5aa.svg?vsn=d" width="250" alt="Bakku Logo"></a>
 </p>
 
