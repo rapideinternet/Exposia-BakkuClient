@@ -20,8 +20,8 @@ class AppServiceProvider extends ServiceProvider
     public function boot(): void
     {
         // Force HTTPS in production environment only for Docker + Caddy (uncomment if needed)
-//        if ($this->app->environment('production')) {
-//            \URL::forceScheme('https');
-//        }
+        if ($this->app->environment('production')) {
+            \URL::forceScheme('https');
+        }
     }
 }

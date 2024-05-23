@@ -13,17 +13,17 @@ class Collections extends Component
     /**
      * The results and type of the component. The type is public so it can be used in the view.
      *
-     * @var
+     * @var mixed
      */
     public $results, $type;
 
     /**
      * Create a new component instance.
      *
-     * @param $type
-     * @param $limit
+     * @param $type string
+     * @param $limit int
      */
-    public function __construct($type, $limit = null)
+    public function __construct(string $type,?int $limit = null)
     {
         // Set the type for the view
         $this->type = $type;
@@ -43,12 +43,12 @@ class Collections extends Component
     /**
      * Fetch the data from the API
      *
-     * @param $type
-     * @param $limit
-     * @param $filter
+     * @param $type string
+     * @param $limit int
+     * @param $filter string|null
      * @return mixed
      */
-    public function fetchData($type, $limit, $filter = null)
+    public function fetchData(string $type,?int $limit,?string $filter = null)
     {
         // Set the filter and limit
         if ($filter) {
@@ -78,7 +78,7 @@ class Collections extends Component
      * @param $limit
      * @return array|mixed|null
      */
-    public function connectToApi($type, $limit = null)
+    public function connectToApi(?string $type,?int $limit = null)
     {
         // Set the URL and token
         $url = env('BAKKU_API_URL') . env('BAKKU_SITE_ID') . '/documents?filter[template]=' . $type . '&sort=position';
@@ -102,9 +102,9 @@ class Collections extends Component
     /**
      * Get the view / contents that represent the component.
      *
-     * @return View|Closure|string
+     * @return Closure|View|string
      */
-    public function render(): View|Closure|string
+    public function render(): Closure|View|string
     {
         return view('components.collections');
     }
